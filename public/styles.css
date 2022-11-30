@@ -1,110 +1,75 @@
-div {
-	 box-sizing: border-box;
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
 }
- .table-container {
-	 display: block;
-	 margin: 2em auto;
-	 width: 90%;
-	 max-width: 600px;
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
 }
- .flag-icon {
-	 margin-right: 0.1em;
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
 }
- .flex-table {
-	 display: flex;
-	 flex-flow: row wrap;
-	 border-left: solid 1px #d9d9d9;
-	 transition: 0.5s;
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
 }
- .flex-table:first-of-type {
-	 border-top: solid 1px #1565c0;
-	 border-left: solid 1px #1565c0;
-}
- .flex-table:first-of-type .flex-row {
-	 background: #1976d2;
-	 color: white;
-	 border-color: #1565c0;
-}
- .flex-table.row:nth-child(odd) .flex-row {
-	 background: #f4f2f1;
-}
- .flex-table:hover {
-	 background: #f5f5f5;
-	 transition: 500ms;
-}
- .flex-row {
-	 width: calc(100% / 4);
-	 text-align: center;
-	 padding: 0.5em 0.5em;
-	 border-right: solid 1px #d9d9d9;
-	 border-bottom: solid 1px #d9d9d9;
-}
- .rowspan {
-	 display: flex;
-	 flex-flow: row wrap;
-	 align-items: flex-start;
-	 justify-content: center;
-}
- .column {
-	 display: flex;
-	 flex-flow: column wrap;
-	 width: 75%;
-	 padding: 0;
-}
- .column .flex-row {
-	 display: flex;
-	 flex-flow: row wrap;
-	 width: 100%;
-	 padding: 0;
-	 border: 0;
-	 border-bottom: solid 1px #d9d9d9;
-}
- .column .flex-row:hover {
-	 background: #f5f5f5;
-	 transition: 500ms;
-}
- .flex-cell {
-	 width: calc(100% / 3);
-	 text-align: center;
-	 padding: 0.5em 0.5em;
-	 border-right: solid 1px #d9d9d9;
-}
- @media all and (max-width: 767px) {
-	 .flex-row {
-		 width: calc(100% / 3);
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
 	}
-	 .flex-row.first {
-		 width: 100%;
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
 	}
-	 .column {
-		 width: 100%;
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
 	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Nr."; }
+	td:nth-of-type(2):before { content: "Message"; }
+	td:nth-of-type(3):before { content: "Summary"; }
+	td:nth-of-type(4):before { content: "Since"; }
+	/* td:nth-of-type(5):before { content: "Wars of Trek?"; }
+	td:nth-of-type(6):before { content: "Secret Alias"; }
+	td:nth-of-type(7):before { content: "Date of Birth"; }
+	td:nth-of-type(8):before { content: "Dream Vacation City"; }
+	td:nth-of-type(9):before { content: "GPA"; }
+	td:nth-of-type(10):before { content: "Arbitrary Data"; } */
 }
- @media all and (max-width: 430px) {
-	 .flex-table .flex-row {
-		 border-bottom: 0;
-	}
-	 .flex-table .flex-row:last-of-type {
-		 border-bottom: solid 1px #d9d9d9;
-	}
-	 .header .flex-row {
-		 border-bottom: solid 1px;
-	}
-	 .flex-row {
-		 width: 100%;
-	}
-	 .flex-row.first {
-		 width: 100%;
-		 border-bottom: solid 1px #d9d9d9;
-	}
-	 .column {
-		 width: 100%;
-	}
-	 .column .flex-row {
-		 border-bottom: solid 1px #d9d9d9;
-	}
-	 .flex-cell {
-		 width: 100%;
-	}
-}
- 

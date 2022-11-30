@@ -3,56 +3,46 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="stylesheet" , href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" />
   <link rel="stylesheet" href="styles.css" />
-  <title>React App</title>
+  <title>The Haskell Error Index</title>
 </head>
 
 <body>
-  <div class="table-container" role="table" aria-label="Destinations">
-    <div class="flex-table header" role="rowgroup">
-      <div class="flex-row" role="columnheader">Country</div>
-      <div class="flex-row" role="columnheader">Events</div>
-      <div class="flex-row" role="columnheader">Time</div>
-      <div class="flex-row" role="columnheader">Fees</div>
-    </div>
-    <div class="flex-table row" role="rowgroup">
-      <div class="flex-row" role="cell">United Kingdom</div>
-      <div class="flex-row" role="cell">Stonehenge, Windsor and Bath with Pub Lunch </div>
-      <div class="flex-row" role="cell">19 Sep, 1p.m.</div>
-      <div class="flex-row" role="cell">US$500</div>
-    </div>
-    <div class="flex-table row" role="rowgroup">
-      <div class="flex-row" role="cell">Canada</div>
-      <div class="flex-row" role="cell">Vancouver to Victoria and Butchart Gardens Tour </div>
-      <div class="flex-row" role="cell">23 Sep, 1:30p.m.</div>
-      <div class="flex-row" role="cell">US$387</div>
-    </div>
-    <div class="flex-table row" role="rowgroup">
-      <div class="flex-row">United States</div>
-      <div class="flex-row" role="cell">Napa and Sonoma Wine Country Tour</div>
-      <div class="flex-row" role="cell">5 Sep, 9p.m.</div>
-      <div class="flex-row" role="cell">US$600</div>
-    </div>
-    <div class="flex-table row" role="rowgroup">
-      <div class="flex-row" role="cell">Australia</div>
-      <div class="flex-row" role="cell">Blue Mountains Tours</div>
-      <div class="flex-row" role="cell">9 Sep, 2p.m.</div>
-      <div class="flex-row" role="cell">US$400</div>
-    </div>
-    <div class="flex-table row" role="rowgroup">
-      <div class="flex-row" role="cell">New Zealand</div>
-      <div class="flex-row" role="cell">Milford Sound Coach & Cruise</div>
-      <div class="flex-row" role="cell">12 Sep, 2p.m.</div>
-      <div class="flex-row" role="cell">US$400</div>
-    </div>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nr.</th>
+        <th>Message</th>
+        <th>Summary</th>
+        <th>Since</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="nowrap">GHC-00158</td>
+        <td><a href="./messages/GHC-00158/index.html">Cannot derive instance for non-stock-deriveable class</a></td>
+        <td>An instance cannot be derived because the class is not stock deriveable.</td>
+        <td>9.6.1</td>
+      </tr>
+      <tr>
+        <td class="nowrap">GHC-00482</td>
+        <td><a href="./messages/GHC-00482/index.html">Lambda syntax in pattern</a></td>
+        <td>Lambda syntax appears in a pattern match.</td>
+        <td>9.6.1</td>
+      </tr>
+      <tr>
+        <td class="nowrap">GHC-01629</td>
+        <td><a href="./messages/GHC-01629/index.html">Too many type arguments in constructor pattern</a></td>
+        <td>Too many type applications to a constructor in a pattern.</td>
+        <td>9.6.1</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 
 </html>
